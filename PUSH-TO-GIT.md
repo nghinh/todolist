@@ -1,15 +1,28 @@
 # Đẩy code lên GitHub / GitLab
 
-Sau khi tạo repository trống trên GitHub (hoặc GitLab), chạy trong thư mục project:
+**Remote đã được cấu hình:** `origin` → `https://github.com/nghinh/TodoList.git`
+
+## Bước 1: Tạo repo trên GitHub
+
+1. Vào [github.com/new](https://github.com/new).
+2. **Repository name:** `TodoList` (hoặc tên khác — nếu khác thì đổi remote bên dưới).
+3. Chọn **Private** hoặc **Public**.
+4. **Không** chọn "Add a README" — để repo trống.
+5. Bấm **Create repository**.
+
+## Bước 2: Push code
+
+Trong terminal, tại thư mục project:
 
 ```bash
 cd c:\temp\TodoList
+git push -u origin master
+```
 
-# Thêm remote (thay YOUR_USERNAME và REPO_NAME bằng của bạn)
-git remote add origin https://github.com/YOUR_USERNAME/REPO_NAME.git
-# hoặc SSH: git remote add origin git@github.com:YOUR_USERNAME/REPO_NAME.git
+Nếu bạn tạo repo với tên/user khác, sửa remote rồi push:
 
-# Đẩy nhánh master lên
+```bash
+git remote set-url origin https://github.com/TEN_CUA_BAN/TEN_REPO.git
 git push -u origin master
 ```
 
