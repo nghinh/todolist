@@ -116,7 +116,13 @@ export function TodayView() {
                     task={task}
                     index={index}
                     total={overdue.length}
-                    onUpdate={updateTask.mutate}
+                    onUpdate={(input) =>
+                    updateTask.mutate({
+                      ...input,
+                      status: input.status as "todo" | "in_progress" | "blocked" | "done" | undefined,
+                      priority: input.priority as "high" | "medium" | "low" | null | undefined,
+                    })
+                  }
                     onReorder={reorderTask.mutate}
                     onDelete={deleteTask.mutate}
                     isUpdating={updateTask.isPending}
@@ -143,7 +149,13 @@ export function TodayView() {
                     task={task}
                     index={index}
                     total={dueToday.length}
-                    onUpdate={updateTask.mutate}
+                    onUpdate={(input) =>
+                    updateTask.mutate({
+                      ...input,
+                      status: input.status as "todo" | "in_progress" | "blocked" | "done" | undefined,
+                      priority: input.priority as "high" | "medium" | "low" | null | undefined,
+                    })
+                  }
                     onReorder={reorderTask.mutate}
                     onDelete={deleteTask.mutate}
                     isUpdating={updateTask.isPending}
@@ -166,7 +178,13 @@ export function TodayView() {
                     task={task}
                     index={index}
                     total={noDate.length}
-                    onUpdate={updateTask.mutate}
+                    onUpdate={(input) =>
+                    updateTask.mutate({
+                      ...input,
+                      status: input.status as "todo" | "in_progress" | "blocked" | "done" | undefined,
+                      priority: input.priority as "high" | "medium" | "low" | null | undefined,
+                    })
+                  }
                     onReorder={reorderTask.mutate}
                     onDelete={deleteTask.mutate}
                     isUpdating={updateTask.isPending}

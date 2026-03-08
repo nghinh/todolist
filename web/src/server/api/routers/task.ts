@@ -51,8 +51,12 @@ export const taskRouter = createTRPCRouter({
       }
       const orderBy =
         input?.orderBy === "dueDate"
-          ? ([{ dueDate: "asc" }, { sortOrder: "asc" }, { createdAt: "asc" }] as const)
-          : ([{ sortOrder: "asc" }, { createdAt: "asc" }] as const);
+          ? [
+              { dueDate: "asc" as const },
+              { sortOrder: "asc" as const },
+              { createdAt: "asc" as const },
+            ]
+          : [{ sortOrder: "asc" as const }, { createdAt: "asc" as const }];
       return ctx.db.task.findMany({
         where,
         orderBy,

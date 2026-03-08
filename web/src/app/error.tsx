@@ -14,19 +14,17 @@ export default function Error({
   }, [error]);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] p-8 text-white">
-      <div className="max-w-lg rounded-xl bg-red-900/30 p-6">
-        <h2 className="mb-2 text-xl font-bold">Something went wrong</h2>
-        <p className="mb-4 font-mono text-sm text-red-200">
-          {error.message}
+    <main className="flex min-h-screen flex-col items-center justify-center bg-slate-950 p-8 text-white">
+      <div className="max-w-lg rounded-2xl border border-slate-700/50 bg-slate-800/30 p-6">
+        <h2 className="mb-2 text-xl font-bold text-slate-100">Đã xảy ra lỗi</h2>
+        <p className="mb-4 text-sm text-slate-400">
+          {error.message || "Lỗi kết nối hoặc cấu hình. Trên production hãy kiểm tra DATABASE_URL (Supabase: dùng Connection pooling port 6543) và AUTH_SECRET."}
         </p>
-        <button
-          type="button"
-          onClick={() => reset()}
-          className="rounded bg-white/20 px-4 py-2 font-semibold hover:bg-white/30"
-        >
-          Try again
-        </button>
+        <div className="flex flex-wrap gap-3">
+          <a href="/" className="rounded-xl bg-amber-500 px-4 py-2 font-semibold text-slate-900 no-underline hover:bg-amber-400">Trang chủ</a>
+          <a href="/auth/signin" className="rounded-xl border border-slate-600 px-4 py-2 text-slate-200 no-underline hover:bg-slate-800">Đăng nhập</a>
+          <button type="button" onClick={() => reset()} className="rounded-xl border border-slate-600 px-4 py-2 text-slate-200 hover:bg-slate-800">Thử lại</button>
+        </div>
       </div>
     </main>
   );

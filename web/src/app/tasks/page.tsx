@@ -12,7 +12,12 @@ export const metadata: Metadata = {
 };
 
 export default async function TasksPage() {
-  const session = await auth();
+  let session;
+  try {
+    session = await auth();
+  } catch {
+    redirect("/auth/signin?callbackUrl=/tasks&error=connection");
+  }
   if (!session?.user) {
     redirect("/auth/signin?callbackUrl=/tasks");
   }

@@ -42,7 +42,7 @@ export function HomeTasksSummary() {
       ) : (
         <>
           <p className="text-2xl font-bold tabular-nums text-slate-100">
-            {tasks.length} task{tasks.length === 1 ? "" : "s"}
+            {(tasks ?? []).length} task{(tasks ?? []).length === 1 ? "" : "s"}
           </p>
           <p className="mt-1 text-sm text-slate-400">Trong danh sách của bạn</p>
           <Link

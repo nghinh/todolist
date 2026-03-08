@@ -22,7 +22,7 @@ git push -u origin master
 Nếu bạn tạo repo với tên/user khác, sửa remote rồi push:
 
 ```bash
-git remote set-url origin https://github.com/TEN_CUA_BAN/TEN_REPO.git
+git remote set-url origin https://github.com/nghinh/todolist.git
 git push -u origin master
 ```
 
